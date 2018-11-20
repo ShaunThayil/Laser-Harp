@@ -1,0 +1,28 @@
+ser = serial.Serial('COM11',9600,timeout=1)
+time.sleep(4)
+click(1200,150)
+
+
+while True:
+       
+       
+       a=ser.readline().decode().split('\r\n')
+       b=a[0].split()
+       
+       
+       
+       if(len(b)==4):
+           b = [int(i) for i in b]
+           
+           if(b[0]<1000):
+            typewrite("e")
+
+           if(b[1]<1000):
+            typewrite("f")
+
+           if(b[2]<1000):
+            typewrite("g")
+          
+           if(b[3]<1000):
+            typewrite("h")
+       
